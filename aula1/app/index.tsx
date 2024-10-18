@@ -1,6 +1,8 @@
-import { View, Text, SafeAreaView, TextInput, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, SafeAreaView, TextInput, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useState } from "react";
 import { Link, router } from "expo-router";
+import { Image } from "expo-image";
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Login() {
 
@@ -15,42 +17,65 @@ export default function Login() {
         router.push("/(tabs)")
     };
 
+    const imageBack = {
+        uri: '../assets/images/fire.gif'
+    };
+
+    const caveira = {
+        uri: '../assets/images/caveira.png'
+    };
+
+    const moto = {
+        uri: '../assets/images/moto.webp'
+    };
     return (
+
         <>
-            <View>
-                <Text>Login</Text>
-
-                <SafeAreaView>
-                    <Text>Email</Text>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={setEmail}
-                        placeholder="Digite seu E-mail"
-                        value={email}
-                        keyboardType="email-address"
-                        secureTextEntry={true}
-                    />
-
-                    <Text>Email</Text>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={setPass}
-                        value={pass}
-                        placeholder="Insira sua senha"
-                        keyboardType="numeric"
-                        secureTextEntry={true}
-                    />
-                </SafeAreaView>
-
-                    <View>
-                        <Text>{count}</Text>
+            <View >
+                <LinearGradient
+                    // Background Linear Gradient
+                    colors={['#FF0000FF', '#FF4D00FF', '#9F0A0AFF']}
+                >
+                    <View style={styles.cabecalho}>
+                        <Text>Ghosters Riders</Text>
+                        <Image source={caveira} style={styles.caveira}></Image>
                     </View>
 
-                    <TouchableOpacity style={styles.button} onPress={onPress}>
-                        <Text>Press Here</Text>
-                    </TouchableOpacity>    
+
+
+                    <SafeAreaView>
+                        <ImageBackground source={imageBack} width={30} height={20} borderRadius={10}>
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={setEmail}
+                                placeholder="Digite seu E-mail"
+                                value={email}
+                                keyboardType="email-address"
+                            />
+                        </ImageBackground>
+
+                        <ImageBackground source={imageBack} width={30} height={20} borderRadius={10}>
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={setPass}
+                                value={pass}
+                                placeholder="Insira sua senha"
+                                keyboardType="numeric"
+                                secureTextEntry={true}
+                                />
+                        </ImageBackground>
+                    </SafeAreaView>
+
+                    <View>
+                        <ImageBackground source={moto} style={styles.moto} borderRadius={10}>
+                            <TouchableOpacity style={styles.button} onPress={onPress}>
+                                <Text style={styles.colorbutton}>Ride Here</Text>
+                            </TouchableOpacity>    
+                        </ImageBackground>
+                    </View>
 
                     <Link href={"/register"}>Cadatrar</Link>
+                </LinearGradient>
             </View>
         </>
     )
@@ -58,16 +83,31 @@ export default function Login() {
 
 const styles = StyleSheet.create ({
     input: {
-        paddingHorizontal:10,
-        paddingVertical:5,
-        borderWidth: 3,
-        borderColor: "#D51111FF",
+        paddingHorizontal:15,
+        paddingVertical:20,
         borderRadius: 10,
+        color: "#ffffff",
+        fontFamily: "Antom",
     },
     button: {
         alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        padding: 10,
+        width: 300,
+        height: 300,
         fontFamily: "aaa",
-      },
+    },
+    colorbutton: {
+        color: "#ffffff",
+        fontSize: 20,
+    },
+    caveira: {
+        width: 100,
+        height: 100,
+    },
+    moto: {
+        width: "80%",
+        height: "80%", 
+    },
+    cabecalho: {
+        alignItems: "center",
+    },
 })
