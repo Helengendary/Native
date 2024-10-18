@@ -4,7 +4,7 @@ import { StyleSheet, Image, Platform, Text } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
-    <Text >Páginha dois</Text>
+    <Text >Página para estudo dos componentes react e nesdfsda</Text>
   );
 }
 

@@ -9,6 +9,23 @@ export default function List() {
     return (
         <>
         <View style={styles.center}>
+
+
+            <Text>Aqui você está a lista</Text>
+
+            <SafeAreaView style={styles.container}>
+                <FlatList
+                    data={data}
+                    renderItem={({item}) => <Item nome={item.nome} idade={item.idade} data={item.data} imagem={item.imagem}/>}
+                    keyExtractor={item => item.id}
+                />
+            </SafeAreaView>
+            
+            <Pressable
+                onPress={() => setModalVisible(true)}>
+                <Text>Show Modal</Text>
+            </Pressable>
+            
             <View style={styles.background}>
                 <Modal
                     animationType="slide"
@@ -27,21 +44,6 @@ export default function List() {
 
                 </Modal>
             </View>
-
-
-            <Text>Aqui você está a lista</Text>
-
-            <SafeAreaView style={styles.container}>
-                <FlatList
-                    data={data}
-                    renderItem={({item}) => <Item nome={item.nome} idade={item.idade} data={item.data} />}
-                    keyExtractor={item => item.id}
-                />
-            </SafeAreaView>
-            <Pressable
-                onPress={() => setModalVisible(true)}>
-                <Text>Show Modal</Text>
-            </Pressable>
         </View>
         </>
     );

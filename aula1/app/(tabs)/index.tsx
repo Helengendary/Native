@@ -3,7 +3,7 @@ import {  StyleSheet, Text } from 'react-native';
 export default function HomeScreen() {
   return (
     <>
-      <Text>Helena mara</Text>
+      <Text>Helena mara das tabs</Text>
     </>
   );
 }

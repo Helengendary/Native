@@ -5,7 +5,8 @@ export const Menu = ({image} : {image: ImageSourcePropType | undefined}) => {
     return (
         <>
             <View style={styles.background}>
-                <Text style={styles.text}>Header exemplo</Text>
+                <Text style={styles.text}>Header exemplo</Text> 
+                <Text style={styles.diferenteFonte}>Testando fontes diferentes</Text> 
                 <Image source={image}/>
             </View>
         </>
@@ -24,6 +25,14 @@ const styles = StyleSheet.create ({
         color: "#ffffff",
         fontSize: 30,
         fontStyle: "italic",
-        fontWeight: "900"
-    }
+        fontWeight: "900",
+        fontFamily: "aaa",
+    },
+    diferenteFonte: {
+        color: "#ffffff",
+        fontSize: 30,
+        fontStyle: "italic",
+        fontWeight: "900",
+        fontFamily: "Antom",
+    },
 });

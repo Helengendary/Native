@@ -3,24 +3,28 @@
         "id" : "1",
         "nome" : "Helena",
         "idade" : "18",
-        "data" : "04/02/06"
+        "data" : "04/02/06",
+        "imagem" : "../assets/images/react-logo.png"
     },
     {
         "id" : "2",
         "nome" : "Helena",
         "idade" : "18",
-        "data" : "04/02/06"
+        "data" : "04/02/06",
+        "imagem" : "../assets/images/react-logo.png"
     },
     {
         "id" : "3",
         "nome" : "Helena",
         "idade" : "18",
-        "data" : "04/02/06"
+        "data" : "04/02/06",
+        "imagem" : "../assets/images/react-logo.png"
     },
     {
         "id" : "4",
         "nome" : "Helena",
         "idade" : "18",
-        "data" : "04/02/06"
+        "data" : "04/02/06",
+        "imagem" : "../assets/images/react-logo.png"
     }
 ]
